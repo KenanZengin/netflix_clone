@@ -1,6 +1,8 @@
 "use client"
+
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect,useState } from "react"
 import { Nav, Navbar } from "react-bootstrap"
 import {BiSearch} from "react-icons/bi"
 import {IoIosNotificationsOutline} from "react-icons/io"
@@ -10,9 +12,26 @@ import {BiHelpCircle} from "react-icons/bi"
 import Logo from "/public/img/logo.png"
 
 const Header = () => {
+    const [scrollY, setScrollY] = useState(0);
+
+    useEffect(()=>{
+
+        const handleScroll = () => {
+            setScrollY(window.scrollY);
+        };
+        handleScroll();
+    window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    },[])
+
+   
   return (
     <header className='header'>
-        <div className="header-web-wrapper">
+        
+        <div className="header-web-wrapper" style={{backgroundColor: scrollY >=90 ? "#0c0c0c" : ""}}>
             <div className="header-web-left">
                 <Image src={Logo} alt="mainLogo"/>
                 <Navbar >
@@ -126,6 +145,9 @@ const Header = () => {
                    </div>
                 </div>
             </div>
+        </div>
+        <div className="movie">
+            <video src={"/mo.mp4"} autoPlay loop muted ></video>
         </div>
     </header>
   )
