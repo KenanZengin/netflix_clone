@@ -1,0 +1,185 @@
+.header{
+    height: 70px;
+    min-height: 70px;
+    width: 100%;
+    background-color: $bg-clr-1;
+    &-web{
+        &-wrapper{
+            padding: 0 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            width:  100%;
+        }
+        &-left{
+            display: flex;
+            align-items: center;
+            img{
+                margin-right: 25px;
+            }
+            a{
+                display: inline-block;
+                color: $text-clr-2 ;
+                margin-left: 20px;
+                font-size: 0.875rem;
+                transition: .5s color;
+                &:hover{
+                    color: $text-clr-1 ;
+                }
+            }
+            .active{
+                font-weight: 600;
+                color: white;
+                &:hover{
+                    color: white ;
+                }
+            }
+            
+        }
+        &-right{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+
+            &:has(.search-movie label input[type="checkbox"]:checked) .search-movie{
+                border: 1px solid white;
+                padding-left: 4px;
+            }
+            .search-movie{
+                display: flex;
+                align-items: center;
+                border: 1px solid $bg-clr-1;
+                height: 37px;
+                &:has(input[type="checkbox"]:not(:checked)) input[type="text"]{
+                    width: 0;
+                   
+                }
+                &:has(input[type="checkbox"]:checked) input[type="text"]{
+                    width: 250px;
+                    padding: 9px 0;
+                    margin-left: 6px;   
+                }
+                input[type="checkbox"]{
+                    display: none;
+                   
+                }
+                input[type="text"]{
+                    width: 0;
+                    transition: .4s all;
+                    background-color: $bg-clr-1;
+                    color: white;
+                    font-size: 0.875rem;
+                }
+            }
+            &:has(.notification:not(:hover)) .notification .tooltips{
+                display: none;
+            }
+            &:has(.notification:hover) .notification .tooltips{
+                display: flex;
+            }
+            .notification{
+                position: relative;
+                .tooltips{         
+                    top: 0;
+                    left: -218px;
+                   .tooltip-info{
+                        
+                        width: 380px;
+                        height: 140px;
+                        padding-top: 20px;
+                        .tooltip-body{
+                            background-color: #120e0c;
+                            color: $text-clr-3;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            height: 100%;
+                            border-top: 1px solid #fff;
+                            &::before{
+                                top: 20px;
+                                left: calc(50% + 170px);
+                            }
+                            
+                        }
+                   }
+                }
+            }
+            a{
+                color: white;
+                font-size: 0.875rem;
+                font-weight: bold;
+            }
+            svg{
+                color: white;
+            }
+            .user-profile{
+                &:has(.info:not(:hover)) .info .tooltips{
+                    display: none;
+                }
+                &:has(.info:hover) .info .tooltips{
+                    display: flex;
+                }
+               .info{
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    img{
+                        border-radius: 5px;
+                    }
+                    .caret{
+                        border-color: #fff transparent transparent;
+                        border-style: solid;
+                        border-width: 5px 5px 0;
+                        height: 0;
+                        margin-left: 10px;
+                        transition: transform 367ms cubic-bezier(.21,0,.07,1);
+                        width: 0;
+                    }
+                    &:hover .caret{
+                        transform: rotate(180deg);
+                    }
+                    .tooltips{
+                        width: 210px;
+                        top: 0;
+                        left: -78px;
+                       .tooltip-info{
+                            width: 100%;
+                            padding-top: 12px;
+                            .tooltip-body{
+                                background-color: #120e0c;
+                                &::before{
+                                    top: 12px;
+                                    left: calc(50% - -53px);
+                                }
+                                ul{
+                                    padding: 16px 16px 0;
+                                    li{
+                                        a{
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 10px;
+                                            margin-bottom: 12px;
+                                            font-size: 0.75rem;
+                                            font-weight: normal;
+                                        }
+                                    }
+                                }
+                                button{
+                                    background-color: inherit;
+                                    width: 100%;
+                                    text-align: center;
+                                    color: #fff;
+                                    font-size: 0.75rem;
+                                    border-top: 1px solid $border-clr-1;
+                                    padding: 10px 0;
+                                }
+                            }
+                       }
+                    }
+               }
+            }
+        }
+    }
+}
