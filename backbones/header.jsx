@@ -4,15 +4,20 @@ import Image from "next/image"
 import Link from "next/link"
 import { useEffect,useState } from "react"
 import { Nav, Navbar } from "react-bootstrap"
-import {BiSearch} from "react-icons/bi"
+import {BiSearch,BiSolidLike} from "react-icons/bi"
 import {IoIosNotificationsOutline} from "react-icons/io"
 import {FaPencilAlt,FaRegUser} from "react-icons/fa"
 import {PiUserSwitchFill} from "react-icons/pi"
 import {BiHelpCircle} from "react-icons/bi"
+import {FaPlay} from "react-icons/fa"
+import {AiOutlineInfoCircle, AiOutlinePlus, AiTwotoneCloseCircle} from "react-icons/ai"
 import Logo from "/public/img/logo.png"
+import Logo2 from "/public/img/logo2.png"
 
 const Header = () => {
     const [scrollY, setScrollY] = useState(0);
+    const [show, setShow] = useState(false);
+
 
     useEffect(()=>{
 
@@ -147,7 +152,67 @@ const Header = () => {
             </div>
         </div>
         <div className="movie">
-            <video src={"/mo.mp4"} autoPlay loop muted ></video>
+            <video src={"/mo.mp4"} autoPlay loop muted className="centerVideo" ></video>
+            <div className="movie-content">
+                <div className="top">
+                    <Image src={Logo2} width={40} alt="movieLogo" />
+                    <span>MOVIE</span>
+                </div>
+                <div className="movie-name">
+                   <h2> Confidential <br /> Delivery</h2>
+                </div>
+                <div className="movie-p">
+                    <p>It is a movie where you will feel  how international <br /> illegal trade is done and the  excitement experienced <br /> while doing it.</p>
+                </div>
+                <div className="movie-buttons">
+                <Link href={"/"}>
+                    <FaPlay size={30} />
+                    Play
+                </Link>
+                <label className="movieInfo" htmlFor="checkMovie">
+                    <AiOutlineInfoCircle size={36} />
+                    More Informatio
+                </label>
+                <input type="checkbox" id="checkMovie" />
+               
+                <div className="popup">
+                   
+                    <div className="popup-content">
+                      
+                        <div className="popup-video">
+                         <video src={"/mo.mp4"} autoPlay loop muted ></video>
+                        </div>
+                      
+                        <div className="movie-info">
+                            <div className="top">
+                                <Image src={Logo2} width={25} alt="movieLogo" />
+                                <span>MOVIE</span>
+                            </div>
+                            <div className="movie-name">
+                                <h2> Confidential  Delivery</h2>
+                            </div>
+                            <div className="movie-buttons">
+                                <Link href={"/"}>
+                                    <FaPlay size={25} />
+                                    Play
+                                </Link>
+                                <button>
+                                   <AiOutlinePlus size={37} />
+                                </button>
+                                <button>
+                                   <BiSolidLike size={25} />
+                                </button>
+                            </div>
+                            <div className="close">
+                            <label   htmlFor="checkMovie">
+                                <AiTwotoneCloseCircle size={36} />
+                            </label>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>        
         </div>
     </header>
   )
