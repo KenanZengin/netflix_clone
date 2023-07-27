@@ -2,22 +2,27 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useEffect,useState } from "react"
-import { Nav, Navbar } from "react-bootstrap"
-import {BiSearch,BiSolidLike} from "react-icons/bi"
+import {useEffect, useState} from "react"
+import {Nav, Navbar, Modal} from "react-bootstrap"
+import {DataSetMovie as data} from "../dataset/moviedata"
+import {BiSearch, BiSolidLike, BiSolidDislike , BiDislike , BiLike} from "react-icons/bi"
 import {IoIosNotificationsOutline} from "react-icons/io"
-import {FaPencilAlt,FaRegUser} from "react-icons/fa"
+import {FaPencilAlt, FaRegUser} from "react-icons/fa"
 import {PiUserSwitchFill} from "react-icons/pi"
 import {BiHelpCircle} from "react-icons/bi"
 import {FaPlay} from "react-icons/fa"
-import {AiOutlineInfoCircle, AiOutlinePlus, AiTwotoneCloseCircle} from "react-icons/ai"
+import {AiOutlineInfoCircle, AiOutlinePlus, AiTwotoneCloseCircle, AiOutlineCheck, AiOutlineHeart} from "react-icons/ai"
 import Logo from "/public/img/logo.png"
 import Logo2 from "/public/img/logo2.png"
 
 const Header = () => {
     const [scrollY, setScrollY] = useState(0);
+    const [addList,setAddList] = useState(false)
     const [show, setShow] = useState(false);
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+    console.log(data);
 
     useEffect(()=>{
 
@@ -152,7 +157,7 @@ const Header = () => {
             </div>
         </div>
         <div className="movie">
-            <video src={"/mo.mp4"} autoPlay loop muted className="centerVideo" ></video>
+            <video src={"/movie3.mp4"} autoPlay loop muted className="centerVideo" poster="/img/poster.png"></video>
             <div className="movie-content">
                 <div className="top">
                     <Image src={Logo2} width={40} alt="movieLogo" />
@@ -165,52 +170,138 @@ const Header = () => {
                     <p>It is a movie where you will feel  how international <br /> illegal trade is done and the  excitement experienced <br /> while doing it.</p>
                 </div>
                 <div className="movie-buttons">
-                <Link href={"/"}>
-                    <FaPlay size={30} />
-                    Play
-                </Link>
-                <label className="movieInfo" htmlFor="checkMovie">
-                    <AiOutlineInfoCircle size={36} />
-                    More Informatio
-                </label>
-                <input type="checkbox" id="checkMovie" />
-               
-                <div className="popup">
+                    <Link href={"/"}>
+                        <FaPlay size={30} />
+                        Play
+                    </Link>
+                    <button onClick={()=>setShow(true)}>
+                        <AiOutlineInfoCircle size={36} />
+                        More Informatio
+                    </button>
                    
-                    <div className="popup-content">
-                      
-                        <div className="popup-video">
-                         <video src={"/mo.mp4"} autoPlay loop muted ></video>
-                        </div>
-                      
-                        <div className="movie-info">
-                            <div className="top">
-                                <Image src={Logo2} width={25} alt="movieLogo" />
-                                <span>MOVIE</span>
+                
+                   
+                    <Modal show={show} onHide={handleClose}>
+                        <Modal.Body>
+                                       
+                            <div className="popup-content">           
+                                <div className="popup-video">
+                                <video src={"/movie3.mp4"} autoPlay loop muted ></video>
+                                </div>                  
+                                <div className="movie-info">
+                                    <div className="top">
+                                        <Image src={Logo2} width={25} alt="movieLogo" />
+                                        <span>MOVIE</span>
+                                    </div>
+                                    <div className="movie-name">
+                                        <h2> Confidential  Delivery</h2>
+                                    </div>
+                                    <div className="movie-buttons">
+                                        <Link href={"/"}>
+                                            <FaPlay size={25} />
+                                            Play
+                                        </Link>
+                                        <button className="addList" onClick={()=>setAddList(!addList)}>
+                                        {addList ? <AiOutlineCheck size={30}/> : <AiOutlinePlus size={34} /> }
+                                            <div className="tooltips">
+                                                <div className="tooltip-info">
+                                                    <div className="tooltip-body">
+                                                        Add to my list
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </button>
+                                        <button className="like">
+                                        <BiSolidLike size={25} />
+                                            <div className="tooltips">
+                                                <div className="tooltip-info">
+                                                    <div className="tooltip-body">
+                                                    <div className="likee">
+                                                            <BiLike size={30} />
+                                                            <div className="tooltips">
+                                                                <div className="tooltip-info">
+                                                                    <div className="tooltip-body">
+                                                                        Not for me
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    <div className="dislike">
+                                                            <BiDislike size={30} />
+                                                            <div className="tooltips">
+                                                                <div className="tooltip-info">
+                                                                    <div className="tooltip-body">
+                                                                        I liked it
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div> 
+                                                    <div className="veryLike">
+                                                            <AiOutlineHeart size={30} />
+                                                            <div className="tooltips">
+                                                                <div className="tooltip-info">
+                                                                    <div className="tooltip-body">
+                                                                        I love this
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div className="close">
+                                        <button   onClick={()=>setShow(false)}>
+                                            <AiTwotoneCloseCircle size={40} />
+                                        </button>
+                                    </div>
+                                </div>
+                                <div className="movie-detail">
+                                    <div className="left">
+                                        <div className="year">
+                                            <p>
+                                                2003 &nbsp; 1 h.&nbsp; 27 min.
+                                            </p>
+                                            <span>
+                                                HD
+                                            </span>
+                                        </div>
+                                        <div className="age">
+                                            13+
+                                        </div>
+                                        <div className="summary">
+                                        A movie about the exciting adventures of fugitives who escaped  from Earth <br /> on Mars.
+                                        </div>
+                                    </div>
+                                    <div className="right">
+                                        <div className="info">
+                                            <p><span>Cast: </span>Rowan Atkinson, Natalie Imbrugla, John Malkovic</p>
+                                        </div>
+                                        <div className="info">
+                                            <p><span>Species: </span>British made, Funny movies</p>
+                                        </div>
+                                        <div className="info">
+                                            <p><span>This movie: </span>Absurd , Pale freak</p>
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                <div className="actor-collection">
+                                    <p>Similar Movies</p>
+                                    <div className="movies">
+                                        {data.map((movie)=>(
+                                            <div key={movie.id}>
+                                                {movie.name}
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
-                            <div className="movie-name">
-                                <h2> Confidential  Delivery</h2>
-                            </div>
-                            <div className="movie-buttons">
-                                <Link href={"/"}>
-                                    <FaPlay size={25} />
-                                    Play
-                                </Link>
-                                <button>
-                                   <AiOutlinePlus size={37} />
-                                </button>
-                                <button>
-                                   <BiSolidLike size={25} />
-                                </button>
-                            </div>
-                            <div className="close">
-                            <label   htmlFor="checkMovie">
-                                <AiTwotoneCloseCircle size={36} />
-                            </label>
-                        </div>
-                        </div>
-                    </div>
-                </div>
+                           
+                        </Modal.Body>
+                    </Modal>
                 </div>
             </div>        
         </div>

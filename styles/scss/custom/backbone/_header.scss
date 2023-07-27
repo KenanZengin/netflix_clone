@@ -1,355 +1,284 @@
-.header{
-    height: 100%;
+body{
     
-    &-web{ 
-        &-wrapper{
-            padding: 0 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 100%;
-            width:  100%;
-            height: 70px;
-            min-height: 70px;
-            width: 100%;
-            background-color: rgba(12, 12, 12,.1);
-            position: sticky;
-            top: 0;
-            z-index: 1;
-        }
-        &-left{
-            display: flex;
-            align-items: center;
-            img{
-                margin-right: 25px;
-            }
-            a{
-                display: inline-block;
-                color: $text-clr-2 ;
-                margin-left: 20px;
-                font-size: 0.875rem;
-                transition: .5s color;
-                &:hover{
-                    color: $text-clr-1 ;
-                }
-            }
-            .active{
-                font-weight: 600;
-                color: white;
-                &:hover{
-                    color: white ;
-                }
-            }
-            
-        }
-        &-right{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-
-            &:has(.search-movie label input[type="checkbox"]:checked) .search-movie{
-                border: 1px solid white;
-                padding-left: 4px;
-                background-color: $bg-clr-1;
-            }
-            .search-movie{
+    .header{
+        height: 100%;
+        
+        &-web{ 
+            &-wrapper{
+                padding: 0 60px;
                 display: flex;
                 align-items: center;
+                justify-content: space-between;
+                height: 70px;
+                min-height: 70px;
+                width: 100%;
+                background-color: rgba(12, 12, 12,.1);
+                position: sticky;
+                top: 0;
+                z-index: 1;
+            }
+            &-left{
+                display: flex;
+                align-items: center;
+                img{
+                    margin-right: 25px;
+                }
+                a{
+                    display: inline-block;
+                    color: $text-clr-2 ;
+                    margin-left: 20px;
+                    font-size: 0.875rem;
+                    transition: .5s color;
+                    &:hover{
+                        color: $text-clr-1 ;
+                    }
+                }
+                .active{
+                    font-weight: 600;
+                    color: white;
+                    &:hover{
+                        color: white ;
+                    }
+                }
                 
-                height: 37px;
-                &:has(input[type="checkbox"]:not(:checked)) input[type="text"]{
-                    width: 0;
-                   
-                }
-                &:has(input[type="checkbox"]:checked) input[type="text"]{
-                    width: 250px;
-                    padding: 9px 0;
-                    margin-left: 6px;   
-                }
-                input[type="checkbox"]{
-                    display: none;
-                   
-                }
-                input[type="text"]{
-                    width: 0;
-                    transition: .4s all;
+            }
+            &-right{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 15px;
+    
+                &:has(.search-movie label input[type="checkbox"]:checked) .search-movie{
+                    border: 1px solid white;
+                    padding-left: 4px;
                     background-color: $bg-clr-1;
+                }
+                .search-movie{
+                    display: flex;
+                    align-items: center;
+                    
+                    height: 37px;
+                    &:has(input[type="checkbox"]:not(:checked)) input[type="text"]{
+                        width: 0;
+                       
+                    }
+                    &:has(input[type="checkbox"]:checked) input[type="text"]{
+                        width: 250px;
+                        padding: 9px 0;
+                        margin-left: 6px;   
+                    }
+                    input[type="checkbox"]{
+                        display: none;
+                       
+                    }
+                    input[type="text"]{
+                        width: 0;
+                        transition: .4s all;
+                        background-color: $bg-clr-1;
+                        color: white;
+                        font-size: 0.875rem;
+                    }
+                }
+                &:has(.notification:not(:hover)) .notification .tooltips{
+                    display: none;
+                }
+                &:has(.notification:hover) .notification .tooltips{
+                    display: flex;
+                }
+                .notification{
+                    position: relative;
+                    .tooltips{         
+                        top: 0;
+                        left: -218px;
+                       .tooltip-info{                      
+                            width: 380px;
+                            height: 140px;
+                            padding-top: 20px;
+                            .tooltip-body{
+                                background-color: #120e0c;
+                                color: $text-clr-3;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                height: 100%;
+                                border-top: 1px solid #fff;
+                                &::before{
+                                    top: 20px;
+                                    left: calc(50% + 165px);
+                                }
+                                
+                            }
+                       }
+                    }
+                }
+                a{
                     color: white;
                     font-size: 0.875rem;
+                    font-weight: bold;
                 }
-            }
-            &:has(.notification:not(:hover)) .notification .tooltips{
-                display: none;
-            }
-            &:has(.notification:hover) .notification .tooltips{
-                display: flex;
-            }
-            .notification{
-                position: relative;
-                .tooltips{         
-                    top: 0;
-                    left: -218px;
-                   .tooltip-info{                      
-                        width: 380px;
-                        height: 140px;
-                        padding-top: 20px;
-                        .tooltip-body{
-                            background-color: #120e0c;
-                            color: $text-clr-3;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            height: 100%;
-                            border-top: 1px solid #fff;
-                            &::before{
-                                top: 20px;
-                                left: calc(50% + 165px);
-                            }
-                            
+                svg{
+                    color: white;
+                }
+                .user-profile{
+                    &:has(.info:not(:hover)) .info .tooltips{
+                        display: none;
+                    }
+                    &:has(.info:hover) .info .tooltips{
+                        display: flex;
+                    }
+                   .info{
+                        display: flex;
+                        align-items: center;
+                        position: relative;
+                        img{
+                            border-radius: 5px;
+                        }
+                        .caret{
+                            border-color: #fff transparent transparent;
+                            border-style: solid;
+                            border-width: 5px 5px 0;
+                            height: 0;
+                            margin-left: 10px;
+                            transition: transform 367ms cubic-bezier(.21,0,.07,1);
+                            width: 0;
+                        }
+                        &:hover .caret{
+                            transform: rotate(180deg);
+                        }
+                        .tooltips{
+                            width: 210px;
+                            top: 0;
+                            left: -78px;
+                           .tooltip-info{
+                                width: 100%;
+                                padding-top: 12px;
+                                .tooltip-body{
+                                    background-color: #120e0c;
+                                    &::before{
+                                        top: 12px;
+                                        left: calc(50% - -53px);
+                                    }
+                                    ul{
+                                        padding: 16px 16px 0;
+                                        li{
+                                            a{
+                                                display: flex;
+                                                align-items: center;
+                                                gap: 10px;
+                                                margin-bottom: 12px;
+                                                font-size: 0.75rem;
+                                                font-weight: normal;
+                                                &:hover{
+                                                    text-decoration: underline;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    button{
+                                        background-color: inherit;
+                                        width: 100%;
+                                        text-align: center;
+                                        color: #fff;
+                                        font-size: 0.75rem;
+                                        border-top: 1px solid $border-clr-1;
+                                        padding: 10px 0;
+                                    }
+                                }
+                           }
                         }
                    }
                 }
             }
-            a{
-                color: white;
-                font-size: 0.875rem;
-                font-weight: bold;
-            }
-            svg{
-                color: white;
-            }
-            .user-profile{
-                &:has(.info:not(:hover)) .info .tooltips{
-                    display: none;
-                }
-                &:has(.info:hover) .info .tooltips{
-                    display: flex;
-                }
-               .info{
-                    display: flex;
-                    align-items: center;
-                    position: relative;
-                    img{
-                        border-radius: 5px;
-                    }
-                    .caret{
-                        border-color: #fff transparent transparent;
-                        border-style: solid;
-                        border-width: 5px 5px 0;
-                        height: 0;
-                        margin-left: 10px;
-                        transition: transform 367ms cubic-bezier(.21,0,.07,1);
-                        width: 0;
-                    }
-                    &:hover .caret{
-                        transform: rotate(180deg);
-                    }
-                    .tooltips{
-                        width: 210px;
-                        top: 0;
-                        left: -78px;
-                       .tooltip-info{
-                            width: 100%;
-                            padding-top: 12px;
-                            .tooltip-body{
-                                background-color: #120e0c;
-                                &::before{
-                                    top: 12px;
-                                    left: calc(50% - -53px);
-                                }
-                                ul{
-                                    padding: 16px 16px 0;
-                                    li{
-                                        a{
-                                            display: flex;
-                                            align-items: center;
-                                            gap: 10px;
-                                            margin-bottom: 12px;
-                                            font-size: 0.75rem;
-                                            font-weight: normal;
-                                            &:hover{
-                                                text-decoration: underline;
-                                            }
-                                        }
-                                    }
-                                }
-                                button{
-                                    background-color: inherit;
-                                    width: 100%;
-                                    text-align: center;
-                                    color: #fff;
-                                    font-size: 0.75rem;
-                                    border-top: 1px solid $border-clr-1;
-                                    padding: 10px 0;
-                                }
-                            }
-                       }
-                    }
-               }
-            }
         }
-    }
-    .movie{
-        position: relative;
-        .centerVideo{
-            height: 100vh;
-            width: 100vw;
-            object-fit: cover;
-            object-position: center;    
+        .movie{
             position: relative;
-            top: -70px;
-            z-index: 0;     
-        }
-        .movie-content{
-            position: absolute;
-            z-index: 0;
-            top: 140px;
-            left: 56px;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-           
-            .movie-p{
-                margin-top: 45px;
-                p{
-                    color: #fff;
-                    font-size: 1.35rem;
-                    line-height: 32px;
+            .centerVideo{
+                height: 100vh;
+                width: 100vw;
+                object-fit: cover;
+                object-position: center;    
+                position: relative;
+                top: -70px;
+                z-index: 0;     
+            }
+            .movie-content{
+                position: absolute;
+                z-index: 0;
+                top: 140px;
+                left: 56px;
+                color: #fff;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+               
+                .movie-p{
+                    margin-top: 45px;
+                    p{
+                        color: #fff;
+                        font-size: 1.35rem;
+                        line-height: 32px;
+                    }
                 }
+                
             }
-            
-        }
-        .top{
-            display: flex;
-            align-items: center;
-            margin-bottom: 5px;
-            span{
-                font-size: 1.5rem;
-                letter-spacing: 4px;
-            }
-        }
-        .movie-name{
-            h2{
-                font-size: 5.5rem;
-                font-weight: bolder;
-            }
-        }
-        .movie-buttons{
-            margin-top: 30px;
-            display: flex;
-            gap: 15px;          
-            a,.movieInfo{
+            .top{
                 display: flex;
                 align-items: center;
-                justify-content: center;
-                padding: 14px 30px;
-                border-radius: 6px;
-                font-size: 1.3rem;
-                font-weight: bold;
-                svg{
-                    margin-right: 15px;
+                margin-bottom: 5px;
+                span{
+                    font-size: 1.5rem;
+                    letter-spacing: 4px;
                 }
             }
-            a{
-                color: #000;
-                background-color: #fff;  
-            }
-            .movieInfo{
-                color: #fff;
-                background-color: rgba(109, 109, 110, 0.7);
-                cursor: pointer;
-                &:focus{
-                    outline:2px solid white;
+            .movie-name{
+                h2{
+                    font-size: 5.5rem;
+                    font-weight: bolder;
                 }
             }
-            input[type=checkbox]{
-                opacity: 0;
-                visibility: hidden;
-                position: absolute;
-                left: -99999px;
-            }
-            .popup{
-                opacity: 0;
-                visibility: hidden;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(#000,.5);
-                z-index: 10;
-                transition: .4s all;
-                &-content{
-                    width: 800px;
-                    position: absolute;
-                    top: -100%;
-                    left: 50%;
-                    transform: translate(-50%,-50%);
-                    background-color: $bg-clr-3;
-                    transition: .5s all;
-                  
-                    .popup-video{
-                        height: 100%;
-                        video{
-                            width: 100%;
-                            height: 100%;
-                        }
-                    }
-                    .movie-info{
-                        position: relative;
-                        top: -188px;
-                        z-index: 5;
-                        padding-left: 15px;
-                        display: flex;
-                        flex-direction: column;
-                        .top{
-                            span{
-                                font-size: 0.75rem !important;
-                                color: #fff;
-                            }
-                        }
-                        .movie-name{
-                        h2{
-                            font-size: 1.5rem !important;
-                            color: #fff;
-                        }
-                        }
-                    }
-                    .movie-buttons{
-                        a{
-                            font-size: 1.2rem;
-                            padding: 11px 30px;       
-                        }
-                        button{
-                            min-width: 47px;
-                            min-height: 47px;
-                            color: #fff;
-                            border-radius: 50%;
-                            background-color: rgba(42,42,42,.6);
-                            border: 2px solid hsla(0,0%,100%,.5);;
-                            padding: 3px;
-                            &:focus{
-                                outline:2px solid white;
-                            }
-                        }
-                    }
-                    .close{
-                        align-self: flex-end;
-                        padding: 10px;
+            .movie-buttons{
+                margin-top: 30px;
+                display: flex;
+                gap: 15px;          
+                a,button{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 14px 30px;
+                    border-radius: 6px;
+                    font-size: 1.3rem;
+                    font-weight: bold;
+                    svg{
+                        margin-right: 15px;
                     }
                 }
-            }
-            input[type=checkbox]:checked + .popup{
-                opacity: 1;
-                visibility: visible;
-                .popup-content{
-                    top: 41%;
+                a{
+                    color: #000;
+                    background-color: #fff;  
                 }
+                button{
+                    color: #fff;
+                    background-color: rgba(109, 109, 110, 0.7);
+                    cursor: pointer;
+                    &:focus{
+                        outline:2px solid white;
+                    }
+                }
+               
+               
+               
             }
         }
         
-        padding-bottom: 1000px;
+    }
+    overflow-x: hidden;
+    &::-webkit-scrollbar{
+        background-color: $bg-clr-3;
+        width: 12px;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: $bg-clr-4;
+        
     }
 }
+
