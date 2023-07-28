@@ -5,7 +5,7 @@ export const DataSetMovie = [
         year : "1996",
         ageLimit : "18+",
         duration : "1 h. 45 min.",
-        summary  :"A movie about the exciting adventures of fugitives who escaped from Earthon Mars.",
+        summary  :"A movie about the exciting adventures of fugitives who escaped from Earthon Mars. Adventures of fugitives",
         img : "/img/movie1.jpg"
     },
     {
@@ -14,7 +14,7 @@ export const DataSetMovie = [
         year : "1957",
         ageLimit : "13+",
         duration : "1 h. 47 min.",
-        summary  :"A movie about the exciting adventures of fugitives who escaped from Earthon Mars.",
+        summary  :"A movie about the exciting adventures of fugitives who escaped from Earthon Mars.exciting adventures of fugitives from Earthon Mars",
         img : "/img/movie2.jpg"
     },
     {
@@ -41,7 +41,7 @@ export const DataSetMovie = [
         year : "1994",
         ageLimit : "18+",
         duration : "2 h. 7 min.",
-        summary  :"A movie about the exciting adventures of fugitives who escaped from Earthon Mars.",
+        summary  :"A movie about the exciting adventures of fugitives who escaped from Earthon Mars. Adventures of fugitives",
         img : "/img/movie5.jpg"
     },
     {
@@ -69,7 +69,7 @@ export const DataSetMovie = [
         ageLimit : "18+",
         duration : "1 h. 49 min.",
         summary  :"A movie about the exciting adventures of fugitives who escaped from Earthon Mars.",
-        img : "/img/movie1.jpg"
+        img : "/img/movie8.jpg"
     },
     {
         id : 9,
@@ -78,6 +78,6 @@ export const DataSetMovie = [
         ageLimit : "13+",
         duration : "2 h. 31 min.",
         summary  :"A movie about the exciting adventures of fugitives who escaped from Earthon Mars.",
-        img : "/img/movie1.jpg"
+        img : "/img/movie9.jpg"
     }
 ]

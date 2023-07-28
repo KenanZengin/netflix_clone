@@ -11,6 +11,7 @@ import {FaPencilAlt, FaRegUser} from "react-icons/fa"
 import {PiUserSwitchFill} from "react-icons/pi"
 import {BiHelpCircle} from "react-icons/bi"
 import {FaPlay} from "react-icons/fa"
+import {IoIosArrowDown, IoIosArrowUp} from "react-icons/io"
 import {AiOutlineInfoCircle, AiOutlinePlus, AiTwotoneCloseCircle, AiOutlineCheck, AiOutlineHeart} from "react-icons/ai"
 import Logo from "/public/img/logo.png"
 import Logo2 from "/public/img/logo2.png"
@@ -19,9 +20,10 @@ const Header = () => {
     const [scrollY, setScrollY] = useState(0);
     const [addList,setAddList] = useState(false)
     const [show, setShow] = useState(false);
+    const [moreMovie,setMoreMovie] = useState(false)
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  
+  
     console.log(data);
 
     useEffect(()=>{
@@ -181,12 +183,13 @@ const Header = () => {
                    
                 
                    
-                    <Modal show={show} onHide={handleClose}>
+                    <Modal show={show}>
                         <Modal.Body>
                                        
                             <div className="popup-content">           
                                 <div className="popup-video">
-                                <video src={"/movie3.mp4"} autoPlay loop muted ></video>
+                                    <video src={"/movie3.mp4"} autoPlay loop muted ></video>
+                                   
                                 </div>                  
                                 <div className="movie-info">
                                     <div className="top">
@@ -289,14 +292,93 @@ const Header = () => {
                                     </div>
                                 </div>
                                 <div className="actor-collection">
-                                    <p>Similar Movies</p>
+                                    <p>John English Collection</p>
                                     <div className="movies">
                                         {data.map((movie)=>(
-                                            <div key={movie.id}>
-                                                {movie.name}
-                                            </div>
+                                          <>
+                                            {movie.id < 4 
+                                            ?   <div className="movies-card" key={movie.id}>
+                                                   <div className="top">
+                                                        <Image src={movie.img} alt="movieImg" height={140} width={250} />
+                                                        <p>{movie.name}</p>
+                                                        <span>{movie.duration}</span>
+                                                   </div>
+                                                   <div className="content">
+                                                        <span>{movie.ageLimit}</span> 
+                                                        <span>{movie.year}</span>
+                                                        <p>{movie.summary}</p>
+                                                   </div>
+                                                </div>
+                                            :
+                                                ""}
+                                          </>
                                         ))}
                                     </div>
+                                </div>
+                                <div className="collection">
+                                    <p>John English Collection</p>
+                                    <div className="movies">
+                                        {data.map((movie)=>(
+                                          <>
+                                            {movie.id < `${moreMovie ? 10 : 7}`
+                                            ?   <div className="movies-card" key={movie.id}>
+                                                   <div className="top">
+                                                        <Image src={movie.img} alt="movieImg" height={140} width={250} />
+                                                        <p>{movie.name}</p>
+                                                        <span>{movie.duration}</span>
+                                                        <span className="play">
+                                                            <FaPlay size={23} />
+                                                        </span>
+                                                   </div>
+                                                   <div className="content">
+                                                        <span>{movie.ageLimit}</span> 
+                                                        <span>{movie.year}</span>
+                                                        <p>{movie.summary}</p>
+                                                   </div>
+                                                </div>
+                                            :
+                                                ""}
+                                          </>
+                                        ))}
+                                    </div>
+                                    <div className="more-movie" data-mrgn={moreMovie ? "true" : ""}>
+                                        <button onClick={()=>setMoreMovie(!moreMovie)}>
+                                            {moreMovie ?<IoIosArrowUp size={28} />: <IoIosArrowDown size={28} /> }  
+                                        </button>
+                                    </div>
+                                   
+                                </div>
+                               
+                                <div className="movie-about">
+                                    <h4>About Confidential Delivery</h4>
+                                    <p>
+                                        <span>Director:</span>&nbsp;
+                                        Oliver Parker
+                                    </p>
+                                    <p>
+                                        <span>Cast:</span>&nbsp;
+                                        Rowan Atkinson, Dominic West, Gillian Anderson,
+                                        Rosamund Pike, Daniel Kaluuya, Richard Schiff
+                                    </p>
+                                    <p>
+                                        <span>Screenplay:</span>&nbsp;
+                                        William Davies, Hamish McColl
+                                    </p>
+                                    <p>
+                                        <span>Species:</span>&nbsp;
+                                        Family movies, Comedy movies
+                                    </p>
+                                    <p>
+                                        <span>This Movie:</span>&nbsp;
+                                        Unusual, Wacky
+                                    </p>
+                                    <p>
+                                        <span>Adult Level:</span>&nbsp;
+                                        <span>13+</span>
+                                        Suitable for over 13 years old
+                                    </p>
+
+
                                 </div>
                             </div>
                            
