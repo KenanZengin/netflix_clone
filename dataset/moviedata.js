@@ -8,7 +8,7 @@ export const DataSetMovie = [
         summary  :"A movie about the exciting adventures of fugitives who escaped from Earthon Mars. Adventures of fugitives",
         img : "/img/movie1.jpg"
     },
-    {
+    { 
         id : 2,
         name : "12 Angry Men",
         year : "1957",

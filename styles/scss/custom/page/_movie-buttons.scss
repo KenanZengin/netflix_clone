@@ -1,0 +1,194 @@
+.movie-buttons{
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    a{
+        padding: 11px 30px;  
+        background-color: white;
+        border-radius: 6px;
+        color: black;
+        font-size: 1.2rem;
+        font-weight: 600;    
+        svg{
+            margin-right: 15px;
+        } 
+    }
+    button{
+        min-width: 47px;
+        min-height: 47px;
+        color: #fff;
+        border-radius: 50%;
+        background-color: rgba(42,42,42,.6);
+        border: 2px solid hsla(0,0%,100%,.5);;
+        padding: 3px;
+        &:focus{
+            outline:2px solid white;
+        }
+        &:hover{
+            border: 2px solid white;
+        }
+    }
+    &:has(.addList:not(:hover)) .addList .tooltips{
+        display: none;
+    }
+    &:has(.addList:hover) .addList .tooltips{
+        display: flex;
+    }
+    .addList{
+       position: relative;
+        .tooltips{         
+            top: -85px;
+            left: 0px;
+            white-space: nowrap;
+           .tooltip-info{                      
+                background-color: white;
+                color: #000;
+                font-size: 1.2rem;
+                font-weight: 600;
+                padding: 10px;
+                .tooltip-body{
+                   
+                    &::before{
+                        top: 58px;
+                        left: calc(43%);
+                        transform: rotate(180deg);
+                        border-bottom-color: white;
+                    }
+                    
+                }
+           }
+        }
+    }
+    &:has(.like:not(:hover)) .like .tooltips{
+        display: none;
+    }
+    &:has(.like:hover) .like .tooltips{
+        display: flex;
+    }
+    .like{
+        position: relative;
+         .tooltips{         
+            top: -32px;
+            left: -5px;                                
+            white-space: nowrap;
+            .tooltip-info{                      
+                background-color: $bg-clr-4;
+                color: white;
+                font-size: 1.2rem;
+                font-weight: 600;
+                padding: 4px 6px;
+                border-radius: 25px;
+                .tooltip-body{
+                    display: flex;
+                    align-items: center;
+                    padding: 3px 5px;
+                    &::before{
+                        content: none;
+                    } 
+                    .likee,.dislike{
+                        margin-right: 20px !important;
+                    }
+                    div{
+                        padding: 6px;
+                        border-radius: 50%;
+                        &:hover{
+                            background-color: $border-clr-1;
+                        }
+                    }
+                    .likee,.dislike,.veryLike{
+                        .tooltips{                       
+                            top: -42px;           
+                            white-space: nowrap;
+                            border-radius: 5px;
+                            background-color: white;
+                            &:hover{
+                                background-color: white;
+                            }
+                           .tooltip-info{                      
+                                background-color: white;
+                                color: #000;
+                                font-size: 1.2rem;
+                                font-weight: 600;
+                                padding: 5px;
+                                border-radius: 6px !important;
+                                .tooltip-body{
+                                    padding: 0 15px;
+                                    position: relative;
+                                    &::before{
+                                        content: '';
+                                        transform: rotate(180deg);
+                                        border-bottom-color: white;
+                                        top: 29px !important;
+                                    }
+                                    &:hover{
+                                        background-color: inherit;
+                                    }
+                                    
+                                }
+                           }
+                        }
+                    }
+                    &:has(.likee:not(:hover)) .likee .tooltips{
+                        display: none;
+                    }
+                    &:has(.likee:hover) .likee .tooltips{
+                        display: flex;
+                    }
+                    .likee{
+                        .tooltips{                                                         
+                            left: 7px;   
+                           .tooltip-info{                                                                            
+                                .tooltip-body{                                                           
+                                    &::before{
+                                        content: '';
+                                        top: 30px;
+                                        left: 44%;                                                               
+                                    }    
+                                }
+                           }
+                        }
+                    }
+                    &:has(.dislike:not(:hover)) .dislike .tooltips{
+                        display: none;
+                    }
+                    &:has(.dislike:hover) .dislike .tooltips{
+                        display: flex;
+                    }
+                    .dislike{
+                        .tooltips{                                                             
+                            left: 69px;                                                  
+                           .tooltip-info{                                                                          
+                                .tooltip-body{                                                           
+                                    &::before{
+                                        content: '';                                                               
+                                        left: 44%;                                                                
+                                    }    
+                                }
+                           }
+                        }
+                    }
+                    &:has(.veryLike:not(:hover)) .veryLike .tooltips{
+                        display: none;
+                    }
+                    &:has(.veryLike:hover) .veryLike .tooltips{
+                        display: flex;
+                    }
+                    .veryLike{
+                        .tooltips{                                                            
+                            left: 132px;                                                  
+                           .tooltip-info{                                                                              
+                               .tooltip-body{                                                          
+                                    &::before{
+                                        content: '';                                                             
+                                        left: 44%;                                                               
+                                    }    
+                                }
+                           }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

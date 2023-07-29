@@ -1,0 +1,17 @@
+.carousel{
+    &-indicators{
+        display: none;
+    }
+    &-inner{
+
+    }
+    &-control-prev,&-control-next{
+        z-index: 99;
+    }
+    &-control-prev{
+
+    }
+    &-control-next{
+
+    }
+}

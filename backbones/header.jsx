@@ -188,8 +188,7 @@ const Header = () => {
                                        
                             <div className="popup-content">           
                                 <div className="popup-video">
-                                    <video src={"/movie3.mp4"} autoPlay loop muted ></video>
-                                   
+                                    <video src={"/movie3.mp4"} autoPlay loop muted ></video>                               
                                 </div>                  
                                 <div className="movie-info">
                                     <div className="top">
@@ -347,8 +346,7 @@ const Header = () => {
                                         </button>
                                     </div>
                                    
-                                </div>
-                               
+                                </div>                        
                                 <div className="movie-about">
                                     <h4>About Confidential Delivery</h4>
                                     <p>
