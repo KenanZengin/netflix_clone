@@ -60,6 +60,18 @@
                             h2{
                                 font-size: 1.5rem !important;
                                 color: #fff;
+                                @include BootstrapMaxWidthResponsive(xl){
+                                    font-size: 1.25rem !important;
+                                    
+                                } 
+                                @include BootstrapMaxWidthResponsive(md){
+                                    font-size: 1rem !important;
+                                    
+                                } 
+                                @include BootstrapMaxWidthResponsive(xxs){
+                                    font-size: 0.9375rem !important; 
+                                    
+                                } 
                             }
                             }
                             .movie-buttons{
@@ -73,9 +85,33 @@
                                     border-radius: 6px;
                                     color: black;
                                     font-size: 1.2rem;
-                                    font-weight: 600;    
+                                    font-weight: 600;   
+                                    @include BootstrapMaxWidthResponsive(xl){
+                                        font-size: 1rem ;
+                                        padding: 8px 20px;  
+                                    } 
+                                    @include BootstrapMaxWidthResponsive(md){
+                                        font-size: 0.9375rem;
+                                        padding: 6px 15px;  
+                                    } 
+                                    @include BootstrapMaxWidthResponsive(xxs){
+                                        font-size: 0.875rem ; 
+                                        padding: 3px 10px;  
+                                    }  
                                     svg{
                                         margin-right: 15px;
+                                        @include BootstrapMaxWidthResponsive(xl){
+                                            padding: 2px;
+                                            margin-right: 12px;
+                                        } 
+                                        @include BootstrapMaxWidthResponsive(md){
+                                            padding: 4px;
+                                            margin-right: 8px;
+                                        } 
+                                        @include BootstrapMaxWidthResponsive(xxs){
+                                            padding: 5px;
+                                            margin-right: 4px;
+                                        }  
                                     } 
                                 }
                                 button{
@@ -86,6 +122,43 @@
                                     background-color: rgba(42,42,42,.6);
                                     border: 2px solid hsla(0,0%,100%,.5);;
                                     padding: 3px;
+                                    
+                                    @include BootstrapMaxWidthResponsive(xl){
+                                        min-width: 40px;
+                                        min-height: 40px;
+                                        max-width: 40px;
+                                        max-height: 40px;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                    } 
+                                    @include BootstrapMaxWidthResponsive(md){
+                                        min-width: 35px;
+                                        min-height: 35px;
+                                        max-width: 35px;
+                                        max-height: 35px;
+                                        
+                                    } 
+                                    @include BootstrapMaxWidthResponsive(xxs){
+                                        min-width: 30px;
+                                        min-height: 30px;
+                                        max-width: 35px;
+                                        max-height: 35px;
+                                    }  
+                                    svg{
+                                        @include BootstrapMaxWidthResponsive(xl){
+                                            padding: 2px;
+                                            
+                                        } 
+                                        @include BootstrapMaxWidthResponsive(md){
+                                            padding: 4px;
+                                            
+                                        } 
+                                        @include BootstrapMaxWidthResponsive(xxs){
+                                            padding: 5px;
+                                           
+                                        }  
+                                    }
                                     &:focus{
                                         outline:2px solid white;
                                     }
@@ -111,6 +184,19 @@
                                             font-size: 1.2rem;
                                             font-weight: 600;
                                             padding: 10px;
+                                            min-height: 40px;
+                                            @include BootstrapMaxWidthResponsive(xl){
+                                                font-size: 1rem;
+                                                
+                                            } 
+                                            @include BootstrapMaxWidthResponsive(md){
+                                                font-size: 0.9375rem ;
+                                                
+                                            } 
+                                            @include BootstrapMaxWidthResponsive(xxs){
+                                                font-size: 0.875rem ; 
+                                                
+                                            } 
                                             .tooltip-body{
                                                
                                                 &::before{
@@ -136,6 +222,11 @@
                                         top: -32px;
                                         left: -5px;                                
                                         white-space: nowrap;
+                                        @include BootstrapMaxWidthResponsive(xl){
+                                            top: -37px;       
+                                            margin-left: 12px;
+                                        } 
+                                       
                                         .tooltip-info{                      
                                             background-color: $bg-clr-4;
                                             color: white;
@@ -143,6 +234,18 @@
                                             font-weight: 600;
                                             padding: 4px 6px;
                                             border-radius: 25px;
+                                            @include BootstrapMaxWidthResponsive(xl){
+                                                font-size: 1rem;
+                                                
+                                            } 
+                                            @include BootstrapMaxWidthResponsive(md){
+                                                font-size: 0.9375rem ;
+                                                
+                                            } 
+                                            @include BootstrapMaxWidthResponsive(xxs){
+                                                font-size: 0.875rem ; 
+                                                
+                                            } 
                                             .tooltip-body{
                                                 display: flex;
                                                 align-items: center;
@@ -152,6 +255,7 @@
                                                 } 
                                                 .likee,.dislike{
                                                     margin-right: 20px !important;
+                                                   
                                                 }
                                                 div{
                                                     padding: 6px;
@@ -176,6 +280,19 @@
                                                             font-weight: 600;
                                                             padding: 5px;
                                                             border-radius: 6px !important;
+                                                            min-height: 28.5px;
+                                                            @include BootstrapMaxWidthResponsive(xl){
+                                                                font-size: 1rem;
+                                                                
+                                                            } 
+                                                            @include BootstrapMaxWidthResponsive(md){
+                                                                font-size: 0.9375rem ;
+                                                                
+                                                            } 
+                                                            @include BootstrapMaxWidthResponsive(xxs){
+                                                                font-size: 0.875rem ; 
+                                                                
+                                                            } 
                                                             .tooltip-body{
                                                                 padding: 0 15px;
                                                                 position: relative;
@@ -292,6 +409,19 @@
                                         color: $text-clr-4 ;
                                         margin-right: 8px;
                                         font-size: .9375rem;
+                                        @include BootstrapMaxWidthResponsive(xl){
+                                            font-size: 0.875rem;
+                                            
+                                        } 
+                                        @include BootstrapMaxWidthResponsive(md){
+                                            font-size: 0.75rem;
+                                            
+                                        } 
+                                        @include BootstrapMaxWidthResponsive(xxs){
+                                            font-size: 0.675rem;
+                                            
+                                        } 
+                                        
                                     }
                                     span{
                                         font-size: 0.6875rem;
@@ -310,10 +440,31 @@
                                     line-height: 21px;
                                     border: 1px solid hsla(0,0%,100%,.4);
                                     margin-bottom: 12px;
+                                    @include BootstrapMaxWidthResponsive(xl){
+                                        font-size: 0.75rem;
+                                        
+                                    } 
+                                    @include BootstrapMaxWidthResponsive(md){
+                                        font-size:  0.675rem;
+                                        
+                                    } 
+                                   
                                 }
                                 .summary{ 
                                     font-size: 1rem;
                                     line-height: 26px;
+                                    @include BootstrapMaxWidthResponsive(xl){
+                                        font-size: 0.9375rem;
+                                        line-height: 22px;
+                                    } 
+                                    @include BootstrapMaxWidthResponsive(md){
+                                        font-size: 0.875rem;
+                                        line-height: 20px;
+                                    } 
+                                    @include BootstrapMaxWidthResponsive(xxs){
+                                        font-size: 0.75rem;
+                                        line-height: 19px;
+                                    } 
                                 }
                             }
                             .right{
@@ -330,6 +481,18 @@
                                     color: #fff;
                                     font-size: 0.875rem;
                                     line-height: 20px;
+                                    @include BootstrapMaxWidthResponsive(xl){
+                                        font-size: 0.8125rem;
+                                        line-height: 22px;
+                                    } 
+                                    @include BootstrapMaxWidthResponsive(md){
+                                        font-size: 0.75rem;
+                                        line-height: 20px;
+                                    } 
+                                    @include BootstrapMaxWidthResponsive(xxs){
+                                        font-size: 0.675rem;
+                                        line-height: 19px;
+                                    } 
                                     span{
                                         color: $text-clr-5;
                                     }
@@ -347,6 +510,18 @@
                                 line-height: 30px;
                                 color: white;
                                 margin-bottom: 15px;
+                                @include BootstrapMaxWidthResponsive(xl){
+                                    font-size: 1.25rem;
+                                    
+                                } 
+                                @include BootstrapMaxWidthResponsive(md){
+                                    font-size: 1rem;
+                                    
+                                } 
+                                @include BootstrapMaxWidthResponsive(xxs){
+                                    font-size: 0.9375rem ; 
+                                    
+                                } 
                             }
                         }
                         .collection{
@@ -509,12 +684,36 @@
                                 color: #fff;
                                 font-size: 1.5rem;
                                 margin-bottom: 25px;
+                                @include BootstrapMaxWidthResponsive(xl){
+                                    font-size: 1.25rem;
+                                    
+                                } 
+                                @include BootstrapMaxWidthResponsive(md){
+                                    font-size: 1rem ;
+                                    
+                                } 
+                                @include BootstrapMaxWidthResponsive(xxs){
+                                    font-size: 0.9375rem ; 
+                                    
+                                } 
                             }
                             p{
                                 color: #fff;
                                 font-size: 0.875rem;
                                 margin: 10px 0;
                                 line-height: 20px;
+                                @include BootstrapMaxWidthResponsive(xl){
+                                    font-size: 0.825;
+                                    
+                                } 
+                                @include BootstrapMaxWidthResponsive(md){
+                                    font-size: 0.75rem ;
+                                    
+                                } 
+                                @include BootstrapMaxWidthResponsive(xxs){
+                                    font-size: 0.675rem ; 
+                                    
+                                } 
                                 span{
                                     color: $text-clr-5;
                                 }
