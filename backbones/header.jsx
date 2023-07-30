@@ -24,7 +24,6 @@ const Header = () => {
 
   
   
-    console.log(data);
 
     useEffect(()=>{
 
@@ -81,6 +80,22 @@ const Header = () => {
                         
                     </Nav>
                 </Navbar>
+                <div className="hibars">
+                    <span>take a look</span>
+                    <span className="caret"></span>
+                    <div className="tooltips">
+                        <div className="tooltip-info">
+                            <div className="tooltip-body">
+                                <ul>
+                                    <li>Homepage</li>
+                                    <li>Movies</li>
+                                    <li>New and Populer</li>
+                                    <li>My List</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div className="header-web-right">
                 <div className="search-movie">
@@ -90,7 +105,7 @@ const Header = () => {
                     </label>
                     <input autoFocus  type="text" placeholder="content, person, genre" />
                 </div>
-                <Link href={"/"}>
+                <Link href={"/"} className="child">
                     Child
                 </Link>
                 <div className="notification">
@@ -180,9 +195,6 @@ const Header = () => {
                         <AiOutlineInfoCircle size={36} />
                         More Informatio
                     </button>
-                   
-                
-                   
                     <Modal show={show}>
                         <Modal.Body>
                                        
@@ -273,7 +285,7 @@ const Header = () => {
                                             13+
                                         </div>
                                         <div className="summary">
-                                        A movie about the exciting adventures of fugitives who escaped  from Earth <br /> on Mars.
+                                        A movie about the exciting adventures of fugitives who escaped  from Earth  on Mars.
                                         </div>
                                     </div>
                                     <div className="right">

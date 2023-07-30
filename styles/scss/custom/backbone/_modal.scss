@@ -10,6 +10,18 @@
     &-dialog{
         width: 900px;
         max-width: 900px;
+        @include BootstrapMaxWidthResponsive(xl){
+            width: 800px;
+            max-width: 800px;
+        } 
+        @include BootstrapMaxWidthResponsive(md){
+            width: 650px;
+            max-width: 650px;
+        } 
+        @include BootstrapMaxWidthResponsive(xxs){
+            width: 450px;
+            max-width: 450px;
+        } 
         .modal-content{
             width: 100%;
             background-color: transparent !important;
@@ -20,7 +32,6 @@
                         width: 100%;
                         background-color: $bg-clr-3;       
                         transition: .4s all;
-                        
                         .popup-video{
                             height: 100%;
                            
@@ -307,6 +318,12 @@
                             }
                             .right{
                                 width: 25%;
+                                @include BootstrapMaxWidthResponsive(md){
+                                    width: 36%;
+                                } 
+                                @include BootstrapMaxWidthResponsive(xxs){
+                                    width: 76%;
+                                } 
                                .info{
                                 margin-bottom: 12px;
                                 p{

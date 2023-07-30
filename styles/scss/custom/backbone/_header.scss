@@ -1,5 +1,6 @@
 body{
-    
+    background-color: $bg-clr-7;
+    overflow-x: hidden;
     .header{
         height: 100%;
         
@@ -20,6 +21,11 @@ body{
             &-left{
                 display: flex;
                 align-items: center;
+                .navbar{
+                    @include BootstrapMaxWidthResponsive(sm){
+                        display: none;
+                    } 
+                }
                 img{
                     margin-right: 25px;
                 }
@@ -32,6 +38,13 @@ body{
                     &:hover{
                         color: $text-clr-1 ;
                     }
+                    @include BootstrapMaxWidthResponsive(md){
+                        font-size: 0.75rem;
+                    } 
+                    @include BootstrapMaxWidthResponsive(sm){
+                        font-size: 0.675rem;
+                    } 
+
                 }
                 .active{
                     font-weight: 600;
@@ -40,24 +53,88 @@ body{
                         color: white ;
                     }
                 }
-                
+                &:has(.hibars:not(:hover)) .hibars .tooltips{
+                    display: none;
+                }
+                &:has(.hibars:hover) .hibars .tooltips{
+                    display: flex;
+                }
+                .hibars{
+                    color: #fff;
+                    font-size: 0.75rem;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    @include BootstrapMinWidthResponsive(sm){
+                        display: none;
+                    } 
+                    .caret{
+                        border-color: #fff transparent transparent;
+                        border-style: solid;
+                        border-width: 5px 5px 0;
+                        height: 0;
+                        margin-left: 10px;
+                        transition: transform 367ms cubic-bezier(.21,0,.07,1);
+                        width: 0;
+                    }
+                    .tooltips{         
+                        top: -9px;
+                        left: -13px;
+                       .tooltip-info{                      
+                            padding-top: 10px;
+                            .tooltip-body{
+                                background-color: #120e0c;
+                                color: white;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                height: 100%;
+                                border-top: 1px solid #fff;
+                                padding: 2px 30px;
+                                &::before{
+                                    top: 10px;
+                                    left: 87%;
+                                }
+                                ul{
+                                    li{
+                                        margin: 30px 0;
+                                        white-space: nowrap;
+                                        cursor: pointer;
+                                    }
+                                }
+                                
+                            }
+                       }
+                    }
+                }
+               
             }
             &-right{
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 gap: 15px;
-    
+                position: relative;
+                .child{
+                    @include BootstrapMaxWidthResponsive(md){
+                        display: none;
+                    } 
+                }
                 &:has(.search-movie label input[type="checkbox"]:checked) .search-movie{
                     border: 1px solid white;
                     padding-left: 4px;
                     background-color: $bg-clr-1;
+
                 }
                 .search-movie{
                     display: flex;
                     align-items: center;
-                    
+                    position: absolute;
                     height: 37px;
+                    right: 161px;
+                    @include BootstrapMaxWidthResponsive(md){
+                        right: 110px;
+                    } 
                     &:has(input[type="checkbox"]:not(:checked)) input[type="text"]{
                         width: 0;
                        
@@ -141,6 +218,9 @@ body{
                             margin-left: 10px;
                             transition: transform 367ms cubic-bezier(.21,0,.07,1);
                             width: 0;
+                            @include BootstrapMaxWidthResponsive(sm){
+                                display: none;
+                            } 
                         }
                         &:hover .caret{
                             transform: rotate(180deg);
@@ -193,13 +273,22 @@ body{
         .movie{
             position: relative;
             .centerVideo{
-                height: 100vh;
+                height: 100%;
                 width: 100vw;
                 object-fit: cover;
                 object-position: center;    
                 position: relative;
                 top: -70px;
-                z-index: 0;     
+                z-index: 0;   
+                @include BootstrapMaxWidthResponsive(xl){
+                    height: 80%;
+                } 
+                @include BootstrapMaxWidthResponsive(md){
+                    height: 60%;
+                } 
+                @include BootstrapMaxWidthResponsive(xxs){
+                    height: 40%;
+                } 
             }
             .movie-content{
                 position: absolute;
@@ -210,13 +299,48 @@ body{
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-               
+                @include BootstrapMaxWidthResponsive(xl){
+                    top: 90px;
+                } 
+                @include BootstrapMaxWidthResponsive(md){
+                    top: 25px;
+                } 
+                @include BootstrapMaxWidthResponsive(xxs){
+                    top: 0;
+                } 
+                @include BootstrapMaxWidthResponsive(xs){
+                    top: 0;
+                } 
                 .movie-p{
                     margin-top: 45px;
+                    @include BootstrapMaxWidthResponsive(xl){
+                        margin-top: 30px;
+                    } 
+                    @include BootstrapMaxWidthResponsive(md){
+                        margin-top: 20px;
+                    } 
+                    @include BootstrapMaxWidthResponsive(xxs){
+                        margin-top: 10px;
+                    } 
+                    @include BootstrapMaxWidthResponsive(xs){
+                        display: none;
+                    } 
                     p{
                         color: #fff;
                         font-size: 1.35rem;
                         line-height: 32px;
+                        @include BootstrapMaxWidthResponsive(xl){
+                            font-size: 1rem;
+                            line-height: 28px;
+                        } 
+                        @include BootstrapMaxWidthResponsive(md){
+                            font-size: 0.875rem;
+                            line-height: 24px;
+                        } 
+                        @include BootstrapMaxWidthResponsive(xxs){
+                            font-size: 0.75rem;
+                            line-height: 21px;
+                        } 
                     }
                 }
                 
@@ -228,13 +352,32 @@ body{
                 span{
                     font-size: 1.5rem;
                     letter-spacing: 4px;
+                    @include BootstrapMaxWidthResponsive(xl){
+                        font-size: 1rem;
+                    } 
+                    @include BootstrapMaxWidthResponsive(md){
+                        font-size: 0.875rem;
+                    } 
+                    @include BootstrapMaxWidthResponsive(xxs){
+                        font-size: 0.75rem;
+                    } 
                 }
             }
             .movie-name{
                 h2{
                     font-size: 5.5rem;
                     font-weight: bolder;
+                    @include BootstrapMaxWidthResponsive(xl){
+                        font-size: 4rem;
+                    } 
+                    @include BootstrapMaxWidthResponsive(md){
+                        font-size: 2.5rem;
+                    } 
+                    @include BootstrapMaxWidthResponsive(xxs){
+                        font-size: 1.5rem;
+                    } 
                 }
+                
             }
             .movie-buttons{
                 margin-top: 30px;
@@ -249,8 +392,45 @@ body{
                     font-size: 1.3rem;
                     font-weight: bold;
                     min-height: 60px;
+                    @include BootstrapMaxWidthResponsive(xl){
+                        padding: 8px 22.5px;
+                        font-size: 1rem;
+                        min-height: 52px;
+                    } 
+                    @include BootstrapMaxWidthResponsive(md){
+                        padding: 6px 8px;
+                        font-size: 0.875rem;
+                        min-height: 35px;
+                        max-height: 35px;
+                    } 
+                    @include BootstrapMaxWidthResponsive(xxs){
+                        padding: 2px 8px ;
+                        font-size: 0.75rem;
+                        min-height: 32px;
+                        max-height: 32;
+                    } 
+                    @include BootstrapMaxWidthResponsive(xs){
+                        font-size: 0.675rem;
+                        min-height: 28px;
+                        max-height: 28px;
+                    } 
                     svg{
                         margin-right: 15px;
+                        @include BootstrapMaxWidthResponsive(xl){
+                            padding: 2px;
+                            margin-right: 8px;
+                        } 
+                        @include BootstrapMaxWidthResponsive(md){
+                            padding: 4px;
+                            margin-right: 6px;
+                        } 
+                        @include BootstrapMaxWidthResponsive(xxs){
+                            padding: 5px;
+                            margin-right: 4px;
+                        } 
+                        @include BootstrapMaxWidthResponsive(xs){
+                            padding: 7px;
+                        } 
                     }
                 }
                 a{
@@ -269,10 +449,8 @@ body{
                
                
             }
-        }
-        
-    }
-    overflow-x: hidden;
+        }   
+    }  
     &::-webkit-scrollbar{
         background-color: $bg-clr-3;
         width: 12px;

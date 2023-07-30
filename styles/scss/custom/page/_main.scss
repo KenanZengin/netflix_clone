@@ -3,7 +3,7 @@
     background-color: $bg-clr-7;
     top: -74px;
     position: relative;
-
+    
     // &:has(.movie-slider-next input[type=checkbox]:checked) .movie-list{
     //     left: -915px;
     //     animation: leftValue .5s ease 0s 1 normal forwards running;
@@ -13,12 +13,18 @@
     //     animation: negativeleftValue .5s ease 0s 1 normal forwards running;
     // }
    
-    
+    .title{
+        color: #fff;
+        font-size: 1.5rem;
+        margin: 10px 0;
+        font-weight: 600;
+    }
     .movie-list{
         display: flex;
         gap: 8px;
         position: relative;
         transition: 1s all;
+        
         .movie{
             position: relative;   
             
@@ -134,12 +140,18 @@
             }
             
         }
+        .movie:nth-child(6) .movie-detail,.movie:nth-child(9) .movie-detail{
+            left: -97px !important;
+        }
+        .movie:first-child .movie-detail{
+            left: 0 !important;
+        }
        
     }
     .movie-slider-next,.movie-slider-previous{
         color: #fff;
         position: absolute;
-        top: 50%;
+        top: 57%;
         z-index: 999;
         transform: translate(0, -50%);
         background: hsla(0,0%,8%,.5);
