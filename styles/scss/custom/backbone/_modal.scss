@@ -142,8 +142,8 @@
                                     @include BootstrapMaxWidthResponsive(xxs){
                                         min-width: 30px;
                                         min-height: 30px;
-                                        max-width: 35px;
-                                        max-height: 35px;
+                                        max-width: 30px;
+                                        max-height: 30px;
                                     }  
                                     svg{
                                         @include BootstrapMaxWidthResponsive(xl){
@@ -378,6 +378,15 @@
                                 padding: 10px;
                                 position: relative;
                                 top: -453px;
+                                @include BootstrapMaxWidthResponsive(xl){
+                                    top: -392px;
+                                } 
+                                @include BootstrapMaxWidthResponsive(md){
+                                    top: -295px;
+                                } 
+                                @include BootstrapMaxWidthResponsive(xxs){
+                                    top: -171px;
+                                } 
                                 button{
                                     background-color: inherit;
                                     svg{
@@ -464,6 +473,7 @@
                                     @include BootstrapMaxWidthResponsive(xxs){
                                         font-size: 0.75rem;
                                         line-height: 19px;
+                                        margin-right: 17px;
                                     } 
                                 }
                             }
@@ -596,6 +606,14 @@
                             gap: 20px;
                             position: relative;
                             z-index: 10;
+                            @include BootstrapMaxWidthResponsive(md){
+                                grid-template-columns: repeat(2,1fr);
+                                
+                            } 
+                            @include BootstrapMaxWidthResponsive(xxs){
+                                grid-template-columns: repeat(1,1fr);
+                                
+                            } 
                             &:has(.movies-card:not(:hover)).movies-card .top .play{
                                 display: none
                             }
@@ -631,12 +649,30 @@
                                         right: 10px;
                                         color: white;
                                         font-size: 0.875rem;
+                                        @include BootstrapMaxWidthResponsive(xl){
+                                            font-size: 0.8215;
+                                            
+                                        } 
+                                        @include BootstrapMaxWidthResponsive(md){
+                                            font-size: 0.75rem ;
+                                            
+                                        } 
+                                       
                                     }
                                     p{
                                         bottom: -3px;
                                         left: 18px;
                                         color: white;
                                         font-size: 0.9375rem;
+                                        @include BootstrapMaxWidthResponsive(xl){
+                                            font-size: 0.875rem;
+                                            
+                                        } 
+                                        @include BootstrapMaxWidthResponsive(md){
+                                            font-size: 0.8215;
+                                            
+                                        } 
+                                       
                                     }
                                     .play{  
                                         display: none;
@@ -661,7 +697,14 @@
                                         color: $text-clr-4;
                                         display: inline-block;
                                         font-size: 0.9375rem;
-                                        
+                                        @include BootstrapMaxWidthResponsive(xl){
+                                            font-size: 0.875rem;
+                                            
+                                        } 
+                                        @include BootstrapMaxWidthResponsive(md){
+                                            font-size: 0.8215;
+                                            
+                                        } 
                                     }
                                     span:first-child{
                                         padding: 2px;

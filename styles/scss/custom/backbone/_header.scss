@@ -135,6 +135,9 @@ body{
                     @include BootstrapMaxWidthResponsive(md){
                         right: 110px;
                     } 
+                    @include BootstrapMaxWidthResponsive(sm){
+                        right: 90px;
+                    } 
                     &:has(input[type="checkbox"]:not(:checked)) input[type="text"]{
                         width: 0;
                        

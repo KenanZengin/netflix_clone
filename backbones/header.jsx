@@ -313,6 +313,9 @@ const Header = () => {
                                                         <Image src={movie.img} alt="movieImg" height={140} width={250} />
                                                         <p>{movie.name}</p>
                                                         <span>{movie.duration}</span>
+                                                        <span className="play">
+                                                            <FaPlay size={23} />
+                                                        </span>
                                                    </div>
                                                    <div className="content">
                                                         <span>{movie.ageLimit}</span> 

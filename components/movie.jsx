@@ -10,7 +10,6 @@ import {SlArrowRight, SlArrowLeft} from "react-icons/sl"
 import {FaPlay} from "react-icons/fa"
 import {AiOutlineInfoCircle, AiOutlinePlus, AiTwotoneCloseCircle, AiOutlineCheck, AiOutlineHeart} from "react-icons/ai"
 import Logo2 from "/public/img/logo2.png"
-import { useRouter } from "next/navigation"
 
 const Movies = () => {
 

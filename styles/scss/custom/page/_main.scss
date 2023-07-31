@@ -46,9 +46,21 @@
                 box-shadow: 0 3px 10px rgb(0 0 0 / 0.6);
                 overflow: hidden;
                 background-color: $bg-clr-7;
+                @include BootstrapMaxWidthResponsive(lg){
+                    width: 300px !important;
+                } 
+                @include BootstrapMaxWidthResponsive(xxs){
+                    width: 250px !important;
+                } 
                 .movie-name{
                     top: 50% !important;
                     left: 4% !important;
+                    @include BootstrapMaxWidthResponsive(lg){
+                        top: 37% !important;
+                    } 
+                    @include BootstrapMaxWidthResponsive(xxs){
+                        top: 32% !important;
+                    } 
                 }
                 .movie-buttons{
                     padding: 0 25px;
@@ -63,13 +75,58 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                   
                     svg{
                         color: black;
                         margin-right: 0;
+                        @include BootstrapMaxWidthResponsive(xl){
+                            padding: 2px;
+                            
+                        } 
+                        @include BootstrapMaxWidthResponsive(md){
+                            padding: 4px;
+                            
+                        } 
+                        @include BootstrapMaxWidthResponsive(xxs){
+                            padding: 5px;
+                           
+                        }  
                     }
                    }
                    button:last-child{
                     margin-left: auto;
+                   }
+                   button{                 
+                    svg{
+                        @include BootstrapMaxWidthResponsive(xl){
+                            padding: 2px;      
+                        } 
+                    }
+                   
+                   }
+                   a,button{
+                    @include BootstrapMaxWidthResponsive(xl){
+                        min-width: 40px;
+                        min-height: 40px;
+                        max-width: 40px;
+                        max-height: 40px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    } 
+                    @include BootstrapMaxWidthResponsive(md){
+                        min-width: 35px;
+                        min-height: 35px;
+                        max-width: 35px;
+                        max-height: 35px;
+                        
+                    } 
+                    @include BootstrapMaxWidthResponsive(xxs){
+                        min-width: 32px;
+                        min-height: 32px;
+                        max-width: 32px;
+                        max-height: 32px;
+                    }  
                    }
                 
                 }
@@ -81,6 +138,9 @@
                     .ageLimit,.hours{
                         font-size: 0.9rem;
                         margin-right: 10px;
+                        @include BootstrapMaxWidthResponsive(xl){
+                            font-size: 0.825rem;
+                        } 
                     }
                     .ageLimit{
                         padding: 0 4px; 
@@ -95,6 +155,13 @@
                     padding: 0 25px 10px;
                     color: #fff;
                     font-size: 1rem;
+                    @include BootstrapMaxWidthResponsive(xl){
+                        font-size: 0.9375rem;
+                    } 
+                    @include BootstrapMaxWidthResponsive(md){
+                       font-size: 0.875rem;
+                    } 
+                   
                     span{
                         display: inline-block;
                         margin-right: 40px;
@@ -117,6 +184,14 @@
                 & > img{
                     border-top-left-radius: 7px;
                     border-top-right-radius: 7px;
+                    @include BootstrapMaxWidthResponsive(lg){
+                        width: 300px;
+                        height: 166px;
+                    } 
+                    @include BootstrapMaxWidthResponsive(xxs){
+                        width: 250px;
+                        height: 151px;
+                    } 
                 }
               
             }
@@ -137,6 +212,14 @@
             }
             & > img{
                 border-radius: 7px;
+                @include BootstrapMaxWidthResponsive(lg){
+                    width: 236px;
+                    height: 131px;
+                } 
+                @include BootstrapMaxWidthResponsive(xxs){
+                    width: 180px;
+                    height: 100px;
+                } 
             }
             
         }
