@@ -4,11 +4,11 @@ import Link from "next/link"
 import { useState} from "react"
 import { Modal } from "react-bootstrap"
 import {DataSetMovie as data} from "../dataset/moviedata"
-import { BiSolidLike, BiSolidDislike , BiDislike , BiLike} from "react-icons/bi"
+import { BiSolidLike, BiDislike , BiLike} from "react-icons/bi"
 import {IoIosArrowDown, IoIosArrowUp} from "react-icons/io"
 import {SlArrowRight, SlArrowLeft} from "react-icons/sl"
 import {FaPlay} from "react-icons/fa"
-import {AiOutlineInfoCircle, AiOutlinePlus, AiTwotoneCloseCircle, AiOutlineCheck, AiOutlineHeart} from "react-icons/ai"
+import {AiOutlinePlus, AiTwotoneCloseCircle, AiOutlineCheck, AiOutlineHeart} from "react-icons/ai"
 import Logo2 from "/public/img/logo2.png"
 
 const Movies = () => {
@@ -30,8 +30,7 @@ const Movies = () => {
         </div>
         <div className="movie-slider-next" onClick={()=>{setNextMovie(!nextMovie);setPreviousMovie(true)}}>
             <SlArrowRight size={32} />
-        </div>
-       
+        </div>  
         <div className="movie-list" style={{left : nextMovie ? "-915px" : "0"}}>    
         {data.map(movie=>(
             <div className="movie " key={movie.id}>
@@ -116,7 +115,7 @@ const Movies = () => {
                     </div>
                     <div className="movie-time">
                         <span className="ageLimit">{movie.ageLimit}</span>
-                        <span className="hours">{movie.duration}.</span>
+                        <span className="hours">{movie.duration}</span>
                         <span className="quality">HD</span>
                     </div>
                     <div className="subject">
@@ -331,8 +330,6 @@ const Movies = () => {
             </Modal>
         </div>
     </div>
-  
-   
   )
 }
 

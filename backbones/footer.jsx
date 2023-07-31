@@ -1,6 +1,5 @@
 import {BiLogoFacebook,BiLogoInstagram,BiLogoTwitter,BiLogoYoutube} from "react-icons/bi"
 
-
 const Footer = () => {
   return (
     <footer className="footer">

@@ -17,13 +17,11 @@ import Logo from "/public/img/logo.png"
 import Logo2 from "/public/img/logo2.png"
 
 const Header = () => {
+
     const [scrollY, setScrollY] = useState(0);
     const [addList,setAddList] = useState(false)
     const [show, setShow] = useState(false);
     const [moreMovie,setMoreMovie] = useState(false)
-
-  
-  
 
     useEffect(()=>{
 
@@ -31,7 +29,7 @@ const Header = () => {
             setScrollY(window.scrollY);
         };
         handleScroll();
-    window.addEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll);
 
         return () => {
             window.removeEventListener("scroll", handleScroll);
@@ -40,9 +38,8 @@ const Header = () => {
 
    
   return (
-    <header className='header'>
-        
-        <div className="header-web-wrapper" style={{backgroundColor: scrollY >=90 ? "#0c0c0c" : ""}}>
+    <header className='header'>    
+        <div className="header-web-wrapper" style={{backgroundColor: scrollY >=70 ? "#0c0c0c" : ""}}>
             <div className="header-web-left">
                 <Image src={Logo} alt="mainLogo"/>
                 <Navbar >
@@ -174,7 +171,7 @@ const Header = () => {
             </div>
         </div>
         <div className="movie">
-            <video src={"/movie3.mp4"} autoPlay loop muted className="centerVideo" poster="/img/poster.png"></video>
+            <video src={"/movie3.mp4"} autoPlay loop  muted className="centerVideo" poster="/img/poster.png"></video>
             <div className="movie-content">
                 <div className="top">
                     <Image src={Logo2} width={40} alt="movieLogo" />
